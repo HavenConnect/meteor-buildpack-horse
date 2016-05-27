@@ -126,15 +126,12 @@ fi
 #
 echo "-----> Installing NPM modules"
 
-echo "curr dir"
+cd `$APP_SOURCE_DIR`
+echo "source dir"
 ls -la
 
-cd $APP_SOURCE_DIR
-echo "curr dir"
-ls -la
-
-cd ~
-echo "~ dir"
+cd ..
+echo "git dir"
 ls -la
 
 npm install
