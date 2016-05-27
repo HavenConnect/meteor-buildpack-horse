@@ -109,7 +109,7 @@ METEOR="$METEOR_DIR/.meteor/meteor" # The meteor binary.
 CUR_RELEASE=`HOME=$METEOR_DIR $METEOR --version | sed -e 's/Meteor /METEOR@/'`
 APP_RELEASE=`cat "$APP_SOURCE_DIR/.meteor/release"`
 echo "APP_RELEASE"
-echo $APP_RELESE
+echo $APP_RELEASE
 if test "$CUR_RELEASE" != "$APP_RELEASE" ; then
   # Sort CUR_RELEASE and APP_RELEASE and find the oldest
   OLDER_RELEASE=`echo "$CUR_RELEASE\n$APP_RELEASE" | sort --version-sort | head -n1`
@@ -125,6 +125,18 @@ fi
 # Build webpack bundle before building meteor app
 #
 echo "-----> Installing NPM modules"
+
+echo "curr dir"
+ls -la
+
+cd $APP_SOURCE_DIR
+echo "curr dir"
+ls -la
+
+cd ~
+echo "~ dir"
+ls -la
+
 npm install
 
 echo "-----> Compiling webpack bundle"
