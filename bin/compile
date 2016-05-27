@@ -126,7 +126,7 @@ fi
 #
 echo "-----> Installing NPM modules"
 
-cd `$APP_SOURCE_DIR`
+cd $APP_SOURCE_DIR
 echo "source dir"
 ls -la
 
