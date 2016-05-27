@@ -129,6 +129,7 @@ echo "-----> Installing NPM modules"
 cd $APP_SOURCE_DIR  # meteor_core dir
 cd ..               # git root directory
 
+npm install npm -g
 npm install
 echo "-----> Compiling webpack bundle"
 ./build
