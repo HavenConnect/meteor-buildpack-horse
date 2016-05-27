@@ -116,11 +116,25 @@ if test "$CUR_RELEASE" != "$APP_RELEASE" ; then
   fi
 fi
 
+
+
+#
+# Build webpack bundle before building meteor app
+#
+
+# If we use npm on root, run npm install.
+if [ -e "$APP_SOURCE_DIR"/package.json ]; then
+  echo "-----> Installing NPM modules"
+  npm install
+fi
+echo "-----> Compiling webpack bundle"
+cd $APP_SOURCE_DIR
+./build
+
 #
 # Build the meteor app!
 #
 echo "-----> Bundling bundle"
-cd $APP_SOURCE_DIR
 
 # Determine if we have --server-only flag capability. Allow non-zero return from grep.
 echo "-----> Checking if this meteor version supports --server-only"
@@ -140,10 +154,6 @@ if [ -z "$SERVER_ONLY_FLAG" ]; then
   echo "-----> Moving on."
 fi
 
-# If we use npm on root, run npm install.
-if [ -e "$APP_SOURCE_DIR"/package.json ]; then
-  npm install
-fi
 
 # Related to https://github.com/meteor/meteor/issues/2796 and 
 # https://github.com/meteor/meteor/issues/2606.  Some packages only build their
