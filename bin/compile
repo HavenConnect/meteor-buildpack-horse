@@ -140,7 +140,8 @@ echo "-----> Compiling webpack bundle"
 # Build the meteor app!
 #
 echo "-----> Bundling Meteor bundle"
-cd $METEOR_DIR
+cd meteor_core
+ls -l
 
 # Determine if we have --server-only flag capability. Allow non-zero return from grep.
 echo "-----> Checking if this meteor version supports --server-only"
