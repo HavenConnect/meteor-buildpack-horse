@@ -126,25 +126,17 @@ fi
 #
 echo "-----> Installing NPM modules"
 
-cd $APP_SOURCE_DIR
-echo "source dir"
-ls -la
+cd $APP_SOURCE_DIR  # meteor_core dir
+cd ..               # git root directory
 
-cd ..
-echo "git dir"
-ls -la
-
-npm install
-
+#npm install
 echo "-----> Compiling webpack bundle"
-cd $APP_SOURCE_DIR
-ls -la
-~/build
+./build
 
 #
 # Build the meteor app!
 #
-echo "-----> Bundling bundle"
+echo "-----> Bundling Meteor bundle"
 
 # Determine if we have --server-only flag capability. Allow non-zero return from grep.
 echo "-----> Checking if this meteor version supports --server-only"
