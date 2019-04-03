@@ -129,8 +129,8 @@ echo "-----> Installing NPM modules"
 cd $APP_SOURCE_DIR  # meteor_core dir
 cd ..               # git root directory
 
-# ensure we have NPM 3
-npm install npm@3.10.9 -g
+# ensure we have a stable version of NPM 
+npm install npm@6.9.0 -g
 # install dev deps to get webpack
 npm install --dev
 echo "-----> Compiling webpack bundle"
