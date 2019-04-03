@@ -130,7 +130,9 @@ cd $APP_SOURCE_DIR  # meteor_core dir
 cd ..               # git root directory
 
 # ensure we have the latest NPM for this Node version 
-npm install npm@3.10.9 -g
+npm install npm@3.10.10 -g
+echo "NPM version"
+echo npm -v
 # install dev deps to get webpack
 npm install --dev
 echo "-----> Compiling webpack bundle"
